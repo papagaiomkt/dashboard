@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="bg-gray-900 min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Left Side - Illustration -->
+        <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden">
+            <!-- Background with gradient -->
+            <div class="absolute inset-0 bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600"></div>
+            
+            <!-- Decorative elements -->
+            <div class="absolute inset-0 opacity-20">
+                <!-- Trees -->
+                <div class="absolute bottom-0 left-10 w-16 h-32 bg-purple-800 clip-triangle"></div>
+                <div class="absolute bottom-0 left-20 w-12 h-24 bg-purple-800 clip-triangle"></div>
+                <div class="absolute bottom-0 left-32 w-20 h-40 bg-purple-800 clip-triangle"></div>
+                <div class="absolute bottom-0 right-10 w-14 h-28 bg-purple-800 clip-triangle"></div>
+                <div class="absolute bottom-0 right-24 w-18 h-36 bg-purple-800 clip-triangle"></div>
+                
+                <!-- Mountains -->
+                <div class="absolute bottom-0 left-0 w-full h-20 bg-purple-700 clip-mountain"></div>
+            </div>
+            
+            <!-- Bird silhouette -->
+            <div class="absolute top-32 left-1/2 transform -translate-x-1/2">
+                <div class="bird-silhouette w-24 h-16 bg-gray-900"></div>
+            </div>
+            
+            <!-- Stars -->
+            <div class="absolute top-16 left-16 w-2 h-2 bg-purple-200 rounded-full opacity-80 animate-pulse"></div>
+            <div class="absolute top-24 right-24 w-1.5 h-1.5 bg-purple-100 rounded-full opacity-60 animate-pulse delay-500"></div>
+            <div class="absolute top-40 left-1/3 w-1 h-1 bg-purple-200 rounded-full opacity-70 animate-pulse delay-1000"></div>
+            
+            <!-- Moon -->
+            <div class="absolute top-20 right-20 w-16 h-16 bg-purple-200 rounded-full opacity-80"></div>
+        </div>
+
+        <!-- Right Side - Register Form -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center p-8">
+            <div class="w-full max-w-md">
+      
+                <!-- Register Form -->
+                <div class="bg-gray-800 p-8 rounded-2xl shadow-2xl border border-gray-700">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-100 mb-2">Sign Up</h2>
+                        <p class="text-gray-400">Create your account to get started</p>
+                    </div>
+
+                    <form id="registerForm" class="space-y-6">
+                        <!-- Name Field -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i data-lucide="user" class="w-5 h-5 text-gray-400"></i>
+                                </div>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    class="w-full pl-10 pr-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                    placeholder="Enter your full name"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i data-lucide="mail" class="w-5 h-5 text-gray-400"></i>
+                                </div>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    class="w-full pl-10 pr-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                    placeholder="Enter your email"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-300 mb-2">Password</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i data-lucide="lock" class="w-5 h-5 text-gray-400"></i>
+                                </div>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    required
+                                    class="w-full pl-10 pr-12 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                    placeholder="Create a password"
+                                >
+                                <button
+                                    type="button"
+                                    id="togglePassword"
+                                    class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-300 transition-colors"
+                                >
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                            <div class="mt-2">
+                                <div class="flex items-center space-x-2 text-xs">
+                                    <div id="length-check" class="flex items-center text-gray-400">
+                                        <i data-lucide="x" class="w-3 h-3 mr-1"></i>
+                                        <span>8+ characters</span>
+                                    </div>
+                                    <div id="uppercase-check" class="flex items-center text-gray-400">
+                                        <i data-lucide="x" class="w-3 h-3 mr-1"></i>
+                                        <span>Uppercase</span>
+                                    </div>
+                                    <div id="number-check" class="flex items-center text-gray-400">
+                                        <i data-lucide="x" class="w-3 h-3 mr-1"></i>
+                                        <span>Number</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password Field -->
+                        <div>
+                            <label for="confirmPassword" class="block text-sm font-medium text-gray-300 mb-2">Confirm Password</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i data-lucide="lock" class="w-5 h-5 text-gray-400"></i>
+                                </div>
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    name="confirmPassword"
+                                    required
+                                    class="w-full pl-10 pr-12 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                    placeholder="Confirm your password"
+                                >
+                                <button
+                                    type="button"
+                                    id="toggleConfirmPassword"
+                                    class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-300 transition-colors"
+                                >
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Terms & Conditions -->
+                        <div class="flex items-start">
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                name="terms"
+                                required
+                                class="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500 focus:ring-2 mt-1"
+                            >
+                            <label for="terms" class="ml-2 text-sm text-gray-300">
+                                I agree to the
+                                <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">Terms of Service</a>
+                                and
+                                <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <!-- Sign Up Button -->
+                        <button
+                            type="submit"
+                            class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-4 rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
+                            id="submitBtn"
+                        >
+                            Create Account
+                        </button>
+                        
+                    </form>
+
+                    <!-- Sign In Link -->
+                    <div class="text-center mt-6">
+                        <p class="text-gray-400">
+                            Already have an account?
+                            <a href="login.html" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">
+                                Sign in
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
