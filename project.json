@@ -1,0 +1,14 @@
+{
+  "title": "Dashboard Responsivo Preview",
+  "description": "Projeto HTML/CSS/JS com menu mobile responsivo",
+  "files": {
+    "index.html": {
+      "hidden": false
+    }
+  },
+  "settings": {
+    "compile": {
+      "clearConsole": true
+    }
+  }
+}
